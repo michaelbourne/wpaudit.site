@@ -30,15 +30,6 @@
         
         <meta property="copyright" content="GPL License, created by Aurooba Ahmed">
         <link rel="shortcut icon" href="/assets/imgs/favicon.png">
-        <script>
-          (function (w,d,s,o,f,js,fjs) {
-          w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
-          js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-          js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
-          }(window, document, 'script', 'plausible', 'https://plausible.io/js/p.js'));
-
-          plausible('page')
-        </script>
     </head>
     <body>
         <a rel="noopener" target="_blank" class="skip-link screen-reader-text" href="#main">Skip to content (press enter)</a>
@@ -48,7 +39,7 @@
                 <h2>Quickly audit your WordPress website.</h2>
                 <p>A helpful checklist to audit your website for formatting, WordPress specific optimization, accessibility, performance, and security.</p>
                 <p>Best used before a launch or on a monthly basis.</p>
-                <div class="button-wrapper"><a href="/audit.html" class="button">Or I can do it for you.</a></div>
+                <div class="button-wrapper"><a href="/audit" class="button">Or I can do it for you.</a></div>
             </article>
         </header>
         <main id="main">
@@ -57,10 +48,11 @@
             <section class="formatting" aria-label="Formatting Checklist">
                 <article  class="checklist-item">
                     <input id="language" type="checkbox">
-                    <label for="language" class="tickoff"><span role="heading" aria-level="4">Language</span></label>
-                    <p>Make sure <code>language_attributes()</code> is set in HTML.</p>
+                    <label for="language" class="tickoff"><span role="heading" aria-level="4">Declare your website language</span></label>
+                    <p>Make sure <code>language_attributes()</code> is set in HTML. This helps translation tools know what language your website in, Google uses it to better rank your website, and it's helpful for folks using screen readers too.</p>
                     <ul>
                         <li>Read the docs for <a rel="noopener" target="_blank" href="https://developer.wordpress.org/reference/functions/language_attributes/">language attributes</a></li>
+                        <li><a href="https://wordpress.org/plugins/chl-change-html-lang/" rel="noopener">Change HTML Lang</a> – a helpful plugin to help you set/change your language declaration if you don't want to tinker with the code.</li>
                     </ul>
                 </article>
                 <article class="checklist-item">
@@ -343,6 +335,12 @@
                     </ul>
                 </article>
             </section>
+            <section class="cta">
+                <h3>That's a lot of things to go through, hey?</h3>
+                <p>Going through everything on the list <em>properly</em> and and figuring out all the fixes you need can take around <strong>5 hours</strong>.</p>
+                <p>Let me do the boring audit work, while you work on what lights you up most.</p>
+                <a rel="noopener" target="_blank" class="button" href="audit">Let's do it.</a>
+            </section>
             <div id="popup1" class="overlay" role="alert">
                 <div class="popup">
                     <h2>Yay!</h2>
@@ -378,6 +376,22 @@
             });
         </script>
         <script type="text/javascript" src="/assets/jquery.min.js" async></script>
-        <script src="https://instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+        <script src="https://instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1">
+        </script>
+        <!-- Fathom - simple website analytics - https://usefathom.com -->
+        <script>
+        (function(f, a, t, h, o, m){
+        a[h]=a[h]||function(){
+        (a[h].q=a[h].q||[]).push(arguments)
+        };
+        o=f.createElement('script'),
+        m=f.getElementsByTagName('script')[0];
+        o.async=1; o.src=t; o.id='fathom-script';
+        m.parentNode.insertBefore(o,m)
+        })(document, window, 'https://cdn.usefathom.com/tracker.js', 'fathom');
+        fathom('set', 'siteId', 'PKKAQXIH');
+        fathom('trackPageview');
+        </script>
+<!-- / Fathom -->
     </body>
 </html>
